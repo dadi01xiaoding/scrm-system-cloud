@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>foundation-model</module>
+        <module>foundation-cache</module>
+        <module>foundation-utils</module>
+        <module>foundation-assist</module>
+    </modules>
+
+    <parent>
+        <groupId>com.dadi01.scrm</groupId>
+        <artifactId>scrm-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+        <relativePath>../scrm-parent</relativePath>
+    </parent>
+
+    <artifactId>scrm-foundation</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+
+
+</project>

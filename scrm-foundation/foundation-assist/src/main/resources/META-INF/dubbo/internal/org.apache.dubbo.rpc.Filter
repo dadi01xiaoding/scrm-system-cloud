@@ -1,0 +1,2 @@
+providerLoggingFilter=com.dadi01.scrm.foundation.assist.filter.dubbo.ProviderLoggingFilter
+consumerLoggingFilter=com.dadi01.scrm.foundation.assist.filter.dubbo.ConsumerLoggingFilter

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+ 	   http://code.alibabatech.com/schema/dubbo
+ 	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
+>
+
+	<!--暴露接口-->
+	<dubbo:service protocol="dubbo"
+				   interface="com.dadi01.modules.user.api.UserServiceRpc"
+				   ref="userServiceRpcImpl"
+				   version="1.0.0"
+				   filter="providerLoggingFilter"
+				   group="local"
+				   retries="0"
+				   timeout="${dubbo.timeout}"/>
+
+	<!-- 引用接口
+	<dubbo:reference id="remoteFormidService"
+					 interface="com.dadi01.modules.user.service.api.yyy"
+					 version="1.0.0"
+					 filter="consumerLoggingFilter"
+					 check="false"/> -->
+</beans>

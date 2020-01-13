@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dadi01.scrm</groupId>
+    <artifactId>scrm-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0-SNAPSHOT</version>
+    <modules>
+        <module>../scrm-service-demo1</module>
+        <module>../scrm-service-demo2</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <jdk.version>1.8</jdk.version>
+        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
+        <spring-boot-admin-starter-server.version>2.2.1</spring-boot-admin-starter-server.version>
+        <spring-boot-admin-starter-client.version>2.2.1</spring-boot-admin-starter-client.version>
+        <dubbo-spring.version>2.7.3</dubbo-spring.version>
+        <alibaba.nacos-config.version>2.1.1.RELEASE</alibaba.nacos-config.version>
+        <mybatis.generator.version>1.3.7</mybatis.generator.version>
+        <mybatis.version>3.5.2</mybatis.version>
+        <mybatis.spring.version>2.0.3</mybatis.spring.version>
+        <druid.version>1.1.20</druid.version>
+        <mysql.version>8.0.16</mysql.version>
+        <swagger.version>1.5.22</swagger.version>
+        <fastjson.version>1.2.46</fastjson.version>
+        <pagehelper.version>1.2.10</pagehelper.version>
+        <commons.lang3.version>3.9</commons.lang3.version>
+        <curator.version>2.13.0</curator.version>
+        <commons-io.version>2.6</commons-io.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--spring boot 相关-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin-starter-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+            <!-- logback 相关 -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+            </dependency>
+            <!-- json 相关 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3.version}</version>
+            </dependency>
+            <!-- Nacos 配置中心 -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${alibaba.nacos-config.version}</version>
+            </dependency>
+            <!-- dubbo -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-spring.version}</version>
+            </dependency>
+            <!--zookeeper-->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- 编译环境 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.mybatis.generator</groupId>
+                    <artifactId>mybatis-generator-maven-plugin</artifactId>
+                    <version>${mybatis.generator.version}</version>
+                    <configuration>
+                        <verbose>true</verbose>
+                        <overwrite>false</overwrite>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <!--maven deploy repository-->
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>Release repository</name>
+            <url>http://47.107.218.227:30100/repository/maven-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Snapshots repository</name>
+            <url>http://47.107.218.227:30100/repository/maven-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
