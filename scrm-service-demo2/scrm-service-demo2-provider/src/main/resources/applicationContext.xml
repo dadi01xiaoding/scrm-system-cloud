@@ -16,5 +16,5 @@
 
 	<!--加载配置、注册中心-->
 	<import resource="classpath:applicationContext-nacos.xml" />
-
+    <import resource="classpath:applicationContext-dubbo.xml" />
 </beans>

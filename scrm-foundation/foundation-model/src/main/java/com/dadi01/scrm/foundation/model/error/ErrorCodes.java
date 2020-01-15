@@ -24,6 +24,10 @@ public class ErrorCodes {
     //网关（001）
     public static final String ROUTE_ERROR = "00101001";
 
+    public static final String SYSTEM_BUSY_ERROR_CODE = "00001";
+    public static final String QUERY_ERROR_CODE = "00002";
+    public static final String OPERATE_ERROR_CODE = "00003";
+    public static final String INVALID_PARAMETERS_ERROR_CODE = "00004";
     /**
      * 获取 Error 对象
      * @param message 错误信息

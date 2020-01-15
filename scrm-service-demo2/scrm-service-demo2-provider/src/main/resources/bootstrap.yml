@@ -1,5 +1,0 @@
-spring:
-  cloud:
-    nacos:
-      config:
-        server-addr: 10.11.1.218:8848

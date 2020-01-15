@@ -4,9 +4,10 @@ import com.dadi01.scrm.foundation.model.dto.ResultDTO;
 import com.dadi01.scrm.service.demo1.api.IAccountService;
 import com.dadi01.scrm.service.demo1.api.dto.AccountDTO;
 import com.dadi01.scrm.service.demo2.api.IGateway;
-import org.apache.dubbo.config.annotation.Reference;
-import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @Description TODO
@@ -16,8 +17,7 @@ import org.springframework.stereotype.Component;
 @Service
 @Component
 public class GatewayService implements IGateway {
-
-    @Reference
+    @Resource
     private IAccountService accountService;
 
     @Override

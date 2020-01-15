@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: 68290918-ed41-4947-b9ea-5a997eed7a78
+        group: DEFAULT_GROUP
+        prefix: demo1
+        file-extension: yaml

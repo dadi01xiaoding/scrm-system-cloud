@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountService implements IAccountService {
 
-    @Value("${user.name}")
+    @Value("${server.port}")
     private String userName;
 
     @Override
